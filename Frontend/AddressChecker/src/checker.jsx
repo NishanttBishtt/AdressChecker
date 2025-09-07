@@ -68,8 +68,6 @@ function Checker() {
               </div>) : (
                 <div>
                  <h4>Address not found</h4>
-                <p>Reason: {result.reason}</p>
-                <p><b>Entered:</b> {result.fullAddress}</p>
               </div>
             )}
           </div>
