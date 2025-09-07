@@ -33,7 +33,7 @@ app.post("/api/validate-address", async (req, res) => {
 try {
     const searchResponse = await fetch(
       `https://nominatim.openstreetmap.org/search?format=json&limit=1&addressdetails=1&q=${encodeURIComponent(mainAddress)}`,
-      { headers: { "User-Agent": "AddressChecker/1.0 bishtnishant007@gmail.com" } }
+      { headers: { "User-Agent": "AddressChecker/1.0 (bishtnishant007@gmail.com)" } }
     );
     const searchData = await searchResponse.json();
   
@@ -41,7 +41,7 @@ try {
       const result = searchData[0];
       const detailsResponse = await fetch(
         `https://nominatim.openstreetmap.org/details.php?place_id=${result.place_id}&format=json`,
-        { headers: { "User-Agent": "AddressChecker/1.0 (your-email@example.com)" } }
+        { headers: { "User-Agent": "AddressChecker/1.0 (bishtnishant007@gmail.com)" } }
       );
       const detailsData = await detailsResponse.json();
       const osmPostcode =
